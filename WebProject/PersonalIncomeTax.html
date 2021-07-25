@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人所得税</title>
+</head>
+<body>
+<table border = "1" width="60%" cellspacing="0" cellpadding="0">
+  <tr>
+    <th width="100%" colspan="2">个人所得税计算器</th>
+  </tr>
+  <tr>
+    <td width="40%">请输入你的月收入:
+    <td><input type="text" size="20" id = "x">元</td>
+    </td>
+  </tr>
+  <tr>
+    <td>请输入所得税起征额：</td>
+    <td><input type="text" size="20" id = "y">元</td>
+
+  </tr>
+  <tr>
+    <td>所得税：</td>
+    <td><input type="text" size="20" id = "z">元</td>
+  </tr>
+  <tr>
+    <th colspan="2">
+      <button type="button" onclick="tax()">计算</button>&nbsp;&nbsp;&nbsp;&nbsp;
+      <button type="reset">重填</button>
+    </th>
+  </tr>
+</table>
+<script>
+  var money = parseFloat(document.getElementById("x").value);
+  var begin = parseFloat(document.getElementById("y").value);
+
+  function tax(){
+
+    if(money < 0 || begin < 0){
+      alert("不能为负数!");
+      return;
+    }
+   if(money <= begin){
+      alert("无需征税");
+      return;
+    }
+    if(isNaN(money) || isNaN(begin)){
+      alert("非数字!");
+      return;
+    }
+
+    var need = (money-begin)/10;
+    document.getElementById("z").value = need;
+  }
+
+</script>
+</body>
+</html>

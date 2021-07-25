@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+
+  <meta name="Description" content="">
+  <title>购物车</title>
+  <script>
+    function account(){
+      var a = document.getElementById("amount").value;
+      var p = document.getElementById("price").value;
+      var c = document.getElementById("carriage").value;
+      var all = document.getElementById("count");
+
+      if(a==="" || p==="" || c ===""){
+        alert("未输入");
+        return ;
+      }else if(a < 0 || p < 0 || c < 0){
+        alert("不能小于0");
+        return ;
+      }else if (isNaN(a) || isNaN(p) || isNaN(c)){
+        alert("非数字！");
+        return ;
+      }
+      var price = parseFloat(p);
+      var s = parseFloat(c);
+      all.value=a * price + s;
+    }
+  </script>
+</head>
+
+<body>
+<form>
+<table border = "1" bgcolor="#32cd32">
+  <tr>
+    <th colspan="5">简易购物车</th>
+  </tr>
+  <tr>
+    <td>商品名称</td>
+    <td>数量(件)</td>
+    <td>单价(美元)</td>
+    <td>运费(美元)</td>
+    <th><input type="button" onclick="account()" value = "合计"></th>
+  </tr>
+  <tr>
+    <td>跑跑道具</td>
+    <td><input type="text" id = "amount">美元</td>
+    <td><input type="text" id = "price">美元</td>
+    <td><input type="text" id = "carriage">美元</td>
+    <td><input type="text" id = "count">美元</td>
+  </tr>
+</table>
+</form>
+</body>
+</html>

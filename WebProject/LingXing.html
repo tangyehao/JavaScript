@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>菱形</title>
+  <script>
+    for(var i=0;i<3;i++){
+      for(var j=6;j>i;j--){
+        document.write("&nbsp&nbsp");
+      }
+      for(var k=0;k<2*i+1;k++){
+        document.write("*");
+      }
+      document.write("</br>");
+    }
+
+    for(var i=4;i>0;i--){
+      for(var j=6;j>=i;j--){
+        document.write("&nbsp&nbsp");
+      }
+      for(var k=0;k<2*i-1;k++){
+        document.write("*");
+      }
+      document.write("</br>")
+    }
+  </script>
+</head>
+<body>
+<hr>
+<p style="color: red;font-size: 30px">这是没有用JAVASCRIPT的显示</p>
+</body>
+</html>

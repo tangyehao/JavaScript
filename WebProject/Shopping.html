@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Shopping</title>
+    <script>
+        function add(){
+            var a = parseFloat(document.getElementById("txtNum1").value);
+            var b = parseFloat(document.getElementById("txtNum2").value);
+            if(isNaN(a) || isNaN(b)){
+                alert("不是数字");
+                return;
+            }
+            document.getElementById("result").value = a + b;
+        }
+
+        function sub(){
+
+            var a = parseFloat(document.getElementById("txtNum1").value);
+            var b = parseFloat(document.getElementById("txtNum2").value);
+            if(isNaN(a) || isNaN(b)){
+                alert("不是数字");
+                return;
+            }
+            document.getElementById("result").value = a - b;
+        }
+
+        function times(){
+
+            var a = parseFloat(document.getElementById("txtNum1").value);
+            var b = parseFloat(document.getElementById("txtNum2").value);
+            if(isNaN(a) || isNaN(b)){
+                alert("不是数字");
+                return;
+            }
+            document.getElementById("result").value = a * b;
+        }
+        function divide(){
+
+            var a = parseFloat(document.getElementById("txtNum1").value);
+            var b = parseFloat(document.getElementById("txtNum2").value);
+            if(isNaN(a) || isNaN(b)){
+                alert("不是数字");
+                return;
+            }
+            document.getElementById("result").value = a / b;
+        }
+    </script>
+</head>
+<body>
+<h3 aligin = "center">购物简易计算器</h3>
+    <h4>第一个数&nbsp;<input type="text" id = "txtNum1"></h4>
+    <h4>第二个数&nbsp;<input type="text" id = "txtNum2"></h4>
+    <button type = "button" onclick = "add()">+</button>&nbsp;&nbsp;&nbsp;&nbsp;
+    <button type = "button" onclick = "sub()">-</button>&nbsp;&nbsp;&nbsp;&nbsp;
+    <button type = "button" onclick = "times()">x</button>&nbsp;&nbsp;&nbsp;&nbsp;
+    <button type = "button" onclick = "divide()">÷</button>&nbsp;&nbsp;&nbsp;&nbsp;
+    <h4>计算结果&nbsp;<input id = "result"></h4>
+
+</body>
+</html>
