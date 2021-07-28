@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //新增下拉列表
+        function selectMonth() {
+            var d1 = document.getElementById("d1");
+            var newNode = document.createElement("select");
+            for (var i = 1; i <= 12; i++) {
+                newNode.options[i-1] = new Option(i + "月", i + "");
+            }
+            d1.appendChild(newNode);
+        }
+
+    </script>
+</head>
+<body>
+<form method="get" action = "#">
+    <input type="button" value = "新增下拉列表" onclick="selectMonth()"><br>
+
+<div id="d1">
+</div>
+</body>
+</html>

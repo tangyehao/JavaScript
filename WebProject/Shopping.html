@@ -4,58 +4,63 @@
   <meta charset="UTF-8">
   <title>Shopping</title>
     <script>
-        function add(){
-            var a = parseFloat(document.getElementById("txtNum1").value);
-            var b = parseFloat(document.getElementById("txtNum2").value);
-            if(isNaN(a) || isNaN(b)){
-                alert("不是数字");
+        function getResult(op){
+            var  num1 = document.getElementById("txtNum1").value;
+            var  num2 =document.getElementById("txtNum2").value;
+            var  result = document.getElementById("result");
+            var msg1 = document.getElementById("msg1");
+            var msg2 = document.getElementById("msg2");
+
+            result.value = "";
+            msg1.innerHTML = "";
+            msg2.innerHTML = "";
+
+           // setTimeout()
+           // clearTimeout()
+
+            if(isNaN(num1) || isNaN(num2)) {
+                msg1.innerHTML = "<font color = 'red'>不是数字</font>";
                 return;
             }
-            document.getElementById("result").value = a + b;
-        }
-
-        function sub(){
-
-            var a = parseFloat(document.getElementById("txtNum1").value);
-            var b = parseFloat(document.getElementById("txtNum2").value);
-            if(isNaN(a) || isNaN(b)){
-                alert("不是数字");
+            if(num1 == ""){
+                msg1.innerHTML = "<font color = 'red'>请填写第一个数</font>";
                 return;
             }
-            document.getElementById("result").value = a - b;
-        }
-
-        function times(){
-
-            var a = parseFloat(document.getElementById("txtNum1").value);
-            var b = parseFloat(document.getElementById("txtNum2").value);
-            if(isNaN(a) || isNaN(b)){
-                alert("不是数字");
+            if(num2 == ""){
+                msg1.innerHTML = "<font color = 'red'>请填写第二个数</font>";
                 return;
             }
-            document.getElementById("result").value = a * b;
-        }
-        function divide(){
-
-            var a = parseFloat(document.getElementById("txtNum1").value);
-            var b = parseFloat(document.getElementById("txtNum2").value);
-            if(isNaN(a) || isNaN(b)){
-                alert("不是数字");
-                return;
+            var a = parseFloat(num1);
+            var b = parseFloat(num2);
+            var res;
+            if(op == "+"){
+                res = a + b;
+            }else if(op == "-"){
+                res = a - b;
+            }else if(op == "*"){
+                res = a * b;
+            }else {
+                if(num2 == 0){
+                    msg2.innerHTML = "<font color = 'red'>除数不能为0</font>";
+                    return;
+                }
+                res = a / b;
             }
-            document.getElementById("result").value = a / b;
+              result.value = res;q
         }
+
+
     </script>
 </head>
 <body>
 <h3 aligin = "center">购物简易计算器</h3>
-    <h4>第一个数&nbsp;<input type="text" id = "txtNum1"></h4>
-    <h4>第二个数&nbsp;<input type="text" id = "txtNum2"></h4>
-    <button type = "button" onclick = "add()">+</button>&nbsp;&nbsp;&nbsp;&nbsp;
-    <button type = "button" onclick = "sub()">-</button>&nbsp;&nbsp;&nbsp;&nbsp;
-    <button type = "button" onclick = "times()">x</button>&nbsp;&nbsp;&nbsp;&nbsp;
-    <button type = "button" onclick = "divide()">÷</button>&nbsp;&nbsp;&nbsp;&nbsp;
-    <h4>计算结果&nbsp;<input id = "result"></h4>
+<h4>第一个数&nbsp;<input type="text" id = "txtNum1"><div style="display: inline" id = "msg1"></div></h4>
+    <h4>第二个数&nbsp;<input type="text" id = "txtNum2"><div style="display: inline" id = "msg2"></div></h4>
+    <input type = "button" class="btn" value = "+" onclick = "getResult('+');"></input>&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type = "button" class="btn" value = "-" onclick = "getResult('-');"></input>&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type = "button" class="btn" value = "*" onclick = "getResult('*');"></input>&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type = "button" class="btn" value = "/" onclick = "getResult('/');"></input>&nbsp;&nbsp;&nbsp;&nbsp;
+    <h4>计算结果&nbsp;<input id = "result" readonly = "readonly"></h4>
 
 </body>
 </html>
