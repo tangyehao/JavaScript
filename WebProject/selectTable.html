@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+
+ <script>
+	function selectChk(obj){
+		var chks = document.getElementsByName("chk");
+		for(var i = 0;i < chks.length; i++){
+				chks[i].checked = obj.checked;
+		}
+	}
+ </script>
+ </head>
+ <body>
+ <table border = "1"  width = "30%" height = "100px">
+ <tr>
+	<td><input type = "checkbox" name = "sels" onclick = "selectChk(this)"/>全选/取消</td>
+	<td>编号</td>
+	<td>名称</td>
+	<td>数量</td>
+ </tr>
+ <tr>
+	<td><input type = "checkbox" name="chk" value = "1"></td>
+	<td>1</td>
+	<td>电脑</td>
+	<td>12</td>
+ </tr>
+ <tr>
+	<td><input type = "checkbox" name="chk" value = "2"></td>
+	<td>2</td>
+	<td>手机</td>
+	<td>13</td>
+ </tr>
+ <tr>
+	<td><input type = "checkbox" name="chk" value = "3"></td>
+	<td>3</td>
+	<td>平板</td>
+	<td>14</td>
+ </tr>
+ </table>
+ </body>
+</html>
